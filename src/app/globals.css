@@ -1,21 +1,436 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600;700&family=Audiowide&family=Exo+2:wght@100;200;300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Default Theme: Neon Noir */
+  --background: 220 50% 3%;
+  --foreground: 60 100% 50%;
+  --card: 220 50% 5%;
+  --card-foreground: 60 100% 50%;
+  --popover: 220 50% 3%;
+  --popover-foreground: 60 100% 50%;
+  --primary: 199 89% 48%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 263 70% 50%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 220 50% 10%;
+  --muted-foreground: 60 100% 70%;
+  --accent: 331 74% 56%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 60 100% 50%;
+  --border: 199 89% 48%;
+  --input: 220 50% 10%;
+  --ring: 199 89% 48%;
+
+  /* Theme-specific fonts */
+  --font-cyber: 'Share Tech Mono', monospace;
+  --font-display: 'Orbitron', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.theme-neon-noir {
+  /* Theme colors remain the same as default */
+}
+
+.theme-biotech-fusion {
+  --background: 170 50% 3%;
+  --foreground: 120 100% 50%;
+  --card: 170 50% 5%;
+  --card-foreground: 120 100% 50%;
+  --popover: 170 50% 3%;
+  --popover-foreground: 120 100% 50%;
+  --primary: 150 89% 48%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 200 70% 50%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 170 50% 10%;
+  --muted-foreground: 120 100% 70%;
+  --accent: 80 74% 56%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 120 100% 50%;
+  --border: 150 89% 48%;
+  --input: 170 50% 10%;
+  --ring: 150 89% 48%;
+
+  --font-cyber: 'Rajdhani', sans-serif;
+  --font-display: 'Exo 2', sans-serif;
+}
+
+.theme-quantum-haze {
+  --background: 240 50% 3%;
+  --foreground: 180 100% 50%;
+  --card: 240 50% 5%;
+  --card-foreground: 180 100% 50%;
+  --popover: 240 50% 3%;
+  --popover-foreground: 180 100% 50%;
+  --primary: 210 89% 48%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 300 70% 50%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 240 50% 10%;
+  --muted-foreground: 180 100% 70%;
+  --accent: 60 74% 56%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 180 100% 50%;
+  --border: 210 89% 48%;
+  --input: 240 50% 10%;
+  --ring: 210 89% 48%;
+
+  --font-cyber: 'Share Tech Mono', monospace;
+  --font-display: 'Audiowide', cursive;
+}
+
+.theme-cyber-samurai {
+  --background: 0 50% 3%;
+  --foreground: 30 100% 50%;
+  --card: 0 50% 5%;
+  --card-foreground: 30 100% 50%;
+  --popover: 0 50% 3%;
+  --popover-foreground: 30 100% 50%;
+  --primary: 15 89% 48%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 45 70% 50%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 0 50% 10%;
+  --muted-foreground: 30 100% 70%;
+  --accent: 330 74% 56%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 30 100% 50%;
+  --border: 15 89% 48%;
+  --input: 0 50% 10%;
+  --ring: 15 89% 48%;
+
+  --font-cyber: 'Exo 2', sans-serif;
+  --font-display: 'Orbitron', sans-serif;
+}
+
+.theme-synthwave-dreamscape {
+  --background: 280 50% 3%;
+  --foreground: 320 100% 50%;
+  --card: 280 50% 5%;
+  --card-foreground: 320 100% 50%;
+  --popover: 280 50% 3%;
+  --popover-foreground: 320 100% 50%;
+  --primary: 300 89% 48%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 260 70% 50%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 280 50% 10%;
+  --muted-foreground: 320 100% 70%;
+  --accent: 200 74% 56%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 320 100% 50%;
+  --border: 300 89% 48%;
+  --input: 280 50% 10%;
+  --ring: 300 89% 48%;
+
+  --font-cyber: 'Share Tech Mono', monospace;
+  --font-display: 'Audiowide', cursive;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-cyber);
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+.dark body {
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(25, 25, 112, 0.1) 0%, transparent 80%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  background-attachment: fixed;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+}
+
+.cyber-grid {
+  background-image: 
+    linear-gradient(to right, hsla(var(--primary) / 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, hsla(var(--primary) / 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.theme-neon-noir .cyber-grid {
+  background-image: 
+    radial-gradient(hsla(var(--primary) / 0.1) 1px, transparent 1px),
+    radial-gradient(hsla(var(--secondary) / 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+
+.theme-biotech-fusion .cyber-grid {
+  background-image: 
+    linear-gradient(to right, hsla(var(--primary) / 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, hsla(var(--secondary) / 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.theme-quantum-haze .cyber-grid {
+  background-image: 
+    radial-gradient(hsla(var(--primary) / 0.1) 2px, transparent 2px),
+    radial-gradient(hsla(var(--secondary) / 0.05) 2px, transparent 2px);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+}
+
+.theme-cyber-samurai .cyber-grid {
+  background-image: 
+    linear-gradient(45deg, hsla(var(--primary) / 0.1) 25%, transparent 25%, transparent 75%, hsla(var(--primary) / 0.1) 75%, hsla(var(--primary) / 0.1)),
+    linear-gradient(45deg, hsla(var(--primary) / 0.1) 25%, transparent 25%, transparent 75%, hsla(var(--primary) / 0.1) 75%, hsla(var(--primary) / 0.1));
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+}
+
+.theme-synthwave-dreamscape .cyber-grid {
+  background-image: 
+    linear-gradient(to right, hsla(var(--primary) / 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, hsla(var(--secondary) / 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, hsla(var(--accent) / 0.05) 1px, transparent 1px);
+  background-size: 80px 80px, 80px 80px, 20px 20px;
+}
+
+.neon-text {
+  text-shadow: 
+    0 0 5px hsl(var(--primary)),
+    0 0 10px hsl(var(--primary)),
+    0 0 15px hsl(var(--primary)),
+    0 0 20px hsl(var(--primary));
+}
+
+.neon-border {
+  box-shadow:
+    0 0 5px hsl(var(--primary)),
+    0 0 10px hsl(var(--primary)),
+    inset 0 0 5px hsl(var(--primary)),
+    inset 0 0 10px hsl(var(--primary));
+}
+
+.glitch {
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 hsl(var(--secondary));
+  clip: rect(24px, 550px, 90px, 0);
+  animation: glitch-anim 3s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 hsl(var(--accent));
+  clip: rect(85px, 550px, 140px, 0);
+  animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(51px, 9999px, 28px, 0);
+  }
+  20% {
+    clip: rect(60px, 9999px, 79px, 0);
+  }
+  40% {
+    clip: rect(46px, 9999px, 33px, 0);
+  }
+  60% {
+    clip: rect(51px, 9999px, 63px, 0);
+  }
+  80% {
+    clip: rect(21px, 9999px, 35px, 0);
+  }
+  100% {
+    clip: rect(78px, 9999px, 81px, 0);
+  }
+}
+
+.scanner {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    transparent 50%,
+    rgba(32, 194, 14, 0.8) 50%,
+    transparent 100%
+  );
+  animation: scan 4s linear infinite;
+}
+
+@keyframes scan {
+  0% {
+    transform: rotate(0deg) translateY(-50%);
+  }
+  100% {
+    transform: rotate(360deg) translateY(-50%);
+  }
+}
+
+.holo-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.holo-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg 90deg,
+    rgba(32, 194, 14, 0.2) 90deg 180deg,
+    transparent 180deg 270deg,
+    rgba(32, 194, 14, 0.2) 270deg 360deg
+  );
+  animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.cyber-panel {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid hsl(var(--primary));
+  box-shadow: 0 0 10px hsl(var(--primary));
+}
+
+.cyber-text {
+  font-family: var(--font-display);
+}
+
+.hologram {
+  position: relative;
+  transform-style: preserve-3d;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.hologram::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(32, 194, 14, 0.3), transparent);
+  filter: blur(5px);
+  opacity: 0.7;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Additional CSS for improved UI */
+.neon-text {
+  text-shadow: 0 0 5px hsl(var(--primary)), 0 0 10px hsl(var(--primary)), 0 0 15px hsl(var(--primary)), 0 0 20px hsl(var(--primary));
+}
+
+.neon-border {
+  box-shadow: 0 0 5px hsl(var(--primary)), 0 0 10px hsl(var(--primary)), inset 0 0 5px hsl(var(--primary)), inset 0 0 10px hsl(var(--primary));
+}
+
+.glitch {
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 hsl(var(--secondary));
+  clip: rect(24px, 550px, 90px, 0);
+  animation: glitch-anim 3s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 hsl(var(--accent));
+  clip: rect(85px, 550px, 140px, 0);
+  animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(51px, 9999px, 28px, 0);
+  }
+  20% {
+    clip: rect(60px, 9999px, 79px, 0);
+  }
+  40% {
+    clip: rect(46px, 9999px, 33px, 0);
+  }
+  60% {
+    clip: rect(51px, 9999px, 63px, 0);
+  }
+  80% {
+    clip: rect(21px, 9999px, 35px, 0);
+  }
+  100% {
+    clip: rect(78px, 9999px, 81px, 0);
+  }
 }
