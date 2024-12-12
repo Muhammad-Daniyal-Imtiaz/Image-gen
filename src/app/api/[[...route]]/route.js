@@ -33,8 +33,8 @@ app.post('/generate-image', async (c) => {
       {
         method: "POST",
         headers: {
-          Authorization: "Bearer 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",
-          "Content-Type": "application/json",
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_HUGGINGFACE_API_TOKEN}`,
+                    "Content-Type": "application/json",
         },
         body: JSON.stringify({ inputs: prompt }), // Send only the prompt
       }
